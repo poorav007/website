@@ -1,0 +1,73 @@
+/* style.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent scrollbars caused by canvas */
+    background-color: #000; /* Fallback background */
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+#particleCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place canvas behind content */
+    display: block; /* Remove extra space below canvas */
+}
+
+.content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1; /* Ensure content is above canvas */
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.2); /* Optional slight dimming for text contrast */
+    pointer-events: none; /* Allow clicks/touches to pass through to canvas unless specified */
+}
+
+.content-overlay h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Responsive font size */
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    pointer-events: auto; /* Allow selecting text */
+}
+
+.content-overlay p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-bottom: 1.5em;
+    max-width: 600px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    pointer-events: auto; /* Allow selecting text */
+}
+
+.cta-button {
+    padding: 12px 25px;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    background-color: #00DCFF; /* A contrasting color */
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    pointer-events: auto; /* Make button clickable */
+}
+
+.cta-button:hover {
+    background-color: #40E0D0; /* Lighter shade on hover */
+    transform: scale(1.05);
+}
